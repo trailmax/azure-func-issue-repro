@@ -13,7 +13,7 @@ builder.Services
     .AddHttpClient("MyApiClient", (services, httpClient) =>
     {
         var configService = services.GetRequiredService<MyScopedConfigurationService>();
-        httpClient.BaseAddress = new Uri($"https://{configService.GetClientDomain}/");
+        httpClient.BaseAddress = new Uri($"https://{configService.GetClientDomain()}/");
     });
 
 
